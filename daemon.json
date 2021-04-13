@@ -1,0 +1,25 @@
+{
+  "registry-mirrors": ["https://5urrjlsk.mirror.aliyuncs.com"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file":"3"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
