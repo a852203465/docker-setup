@@ -5,7 +5,9 @@
  - 修改 install.sh 权限，命令：chmod +x install.sh
  - 执行 ./install.sh 即可
 
-
+## 离线包下载
+ - docker: https://download.docker.com/linux/static/stable/x86_64/
+ 
 
 
 
