@@ -23,6 +23,7 @@ function install_docker {
   chmod +x /etc/systemd/system/docker.service
 
   # 设置daemon.json
+  sudo mkdir -p /etc/docker
   sudo cp -f $DIR/daemon.json  /etc/docker/daemon.json
 
   systemctl daemon-reload
