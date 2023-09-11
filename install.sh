@@ -9,21 +9,9 @@ source $DIR/common.sh
 set +o noglob
 
 function install_docker {
-
-  # 解压文件
-  tar -zxvf $DIR/docker-20.10.1.tgz
-
-  # 复制文件
-  sudo cp -f $DIR/docker/* /usr/bin/
-
-  # 将docker注册为service
-  sudo cp -f $DIR/docker.service /etc/systemd/system/docker.service
-
-  # 修改权限 启动Docker
-  chmod +x /etc/systemd/system/docker.service
+  curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 
   # 设置daemon.json
-  sudo mkdir -p /etc/docker
   sudo cp -f $DIR/daemon.json  /etc/docker/daemon.json
 
   systemctl daemon-reload
@@ -37,7 +25,7 @@ function restart_docker {
 }
 
 function install_dockercompose {
-  sudo cp -f $DIR/docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
+  sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
 }
 
