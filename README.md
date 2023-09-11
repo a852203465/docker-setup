@@ -14,7 +14,12 @@
 ### docker-compose 命令补全
  - curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
 
-
+## docker免root
+```text
+sudo groupadd docker
+sudo gpasswd -a ${USER} docker
+newgrp docker
+```
 
 
 
